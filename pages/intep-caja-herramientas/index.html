@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INTEP Caja de Herramientas</title>
+    <meta
+      name="description"
+      content="Ruta metodológica visual de la caja de herramientas de INTEP."
+    />
+    <link rel="stylesheet" href="./assets/css/intep-caja-herramientas.css" />
+  </head>
+  <body class="toolkit-page" data-toolkit-page>
+    <main class="page-shell">
+      <section class="intro-panel">
+        <p class="eyebrow">INTEP · Caja de herramientas</p>
+        <h1>Ruta metodológica</h1>
+        <div class="intro-copy">
+          <p>
+            Explora las fases del recorrido y abre cada estación para ver sus
+            sesiones, objetivos, actividades sugeridas y documentos
+            referenciados.
+          </p>
+        </div>
+        <div class="stats-row" data-stats></div>
+      </section>
+
+      <section class="journey-section">
+        <div class="journey-copy">
+          <h2>Un recorrido por fases</h2>
+          <p>
+            Cada caja representa una fase. Haz clic para abrir su descripción
+            y navegar las sesiones asociadas.
+          </p>
+        </div>
+        <div class="journey-board" data-journey-board>
+          <svg class="route-svg" data-route-svg aria-hidden="true"></svg>
+          <div class="journey-stations" data-journey-stations></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="phase-modal" data-phase-modal hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">
+          ×
+        </button>
+        <section class="modal-hero">
+          <span class="modal-kicker" data-modal-count></span>
+          <h2 class="modal-title" id="modal-title" data-modal-title></h2>
+          <p class="modal-description" data-modal-description></p>
+        </section>
+        <div class="accordion-list" data-modal-sessions></div>
+      </div>
+    </div>
+
+    <script src="./assets/data/intep-caja-herramientas-data.js"></script>
+    <script src="./assets/js/intep-caja-herramientas.js"></script>
+  </body>
+</html>
