@@ -83,6 +83,7 @@ const JOURNEY_LAYOUT = {
     { x: 38, y: 52 },
     { x: 66, y: 72 },
     { x: 40, y: 90 },
+    { x: 70, y: 98 },
   ],
 };
 
@@ -153,6 +154,7 @@ function renderBoard(board, phases) {
   const stationsHost = board.querySelector("[data-journey-stations]");
 
   svg.setAttribute("viewBox", "0 0 100 100");
+  svg.setAttribute("preserveAspectRatio", "none");
   svg.innerHTML = `
     <path class="route-guide" d="${path}" pathLength="100"></path>
     <path class="route-dots" d="${path}" pathLength="100"></path>
