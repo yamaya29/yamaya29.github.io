@@ -87,6 +87,34 @@ const JOURNEY_LAYOUT = {
   ],
 };
 
+const ADDITIONAL_MATERIALS = [
+  {
+    id: "infografias",
+    label: "Material adicional",
+    title: "Infografías",
+    description:
+      "Accede a las infografías organizadas por fase. Por ahora los enlaces son temporales mientras se comparte la versión final.",
+    links: [
+      { label: "Fase 1", href: "#" },
+      { label: "Fase 2", href: "#" },
+      { label: "Fase 3", href: "#" },
+      { label: "Fase 4", href: "#" },
+      { label: "Fase 5", href: "#" },
+    ],
+  },
+  {
+    id: "instrumentos-valoracion",
+    label: "Material adicional",
+    title: "Instrumentos de valoración",
+    description:
+      "Aquí aparecerán los instrumentos de evaluación por fase. De momento dejamos los accesos placeholder para completar luego.",
+    links: [
+      { label: "Fase 1", href: "#" },
+      { label: "Fase 2", href: "#" },
+    ],
+  },
+];
+
 function escapeHtml(value) {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -180,6 +208,31 @@ function renderBoard(board, phases) {
     .join("");
 }
 
+function renderAdditionalMaterials(host, materials) {
+  if (!host) {
+    return;
+  }
+
+  host.innerHTML = materials
+    .map((material, index) => {
+      const itemLabel = material.links.length === 1 ? "recurso" : "recursos";
+      return `
+        <button
+          class="resource-card resource-tone-${(index % 2) + 1}"
+          type="button"
+          data-resource-id="${material.id}"
+          aria-label="${escapeHtml(material.title)}"
+        >
+          <span class="resource-card-label">${escapeHtml(material.label)}</span>
+          <strong>${escapeHtml(material.title)}</strong>
+          <p>${escapeHtml(material.description)}</p>
+          <span class="resource-card-meta">${material.links.length} ${itemLabel}</span>
+        </button>
+      `;
+    })
+    .join("");
+}
+
 function makeDocumentsMarkup(documents) {
   if (!documents.length) {
     return `<p class="empty-copy">No hay documento referenciado para esta sesión.</p>`;
@@ -214,6 +267,53 @@ function makeDocumentsMarkup(documents) {
               >
                 <span class="document-tag">${tag}</span>
                 ${escapeHtml(label)}
+              </a>
+            </li>
+          `;
+        })
+        .join("")}
+    </ul>
+  `;
+}
+
+function makeResourceLinksMarkup(links) {
+  if (!links.length) {
+    return `<p class="empty-copy">No hay enlaces disponibles todavía.</p>`;
+  }
+
+  return `
+    <ul class="document-list">
+      ${links
+        .map((link) => {
+          const href = normalizeText(link.href) || "#";
+          const disabled = href === "#";
+
+          if (disabled) {
+            return `
+              <li>
+                <a
+                  class="document-link is-muted"
+                  href="#"
+                  aria-disabled="true"
+                  data-placeholder-link
+                >
+                  <span class="document-tag">Pronto</span>
+                  ${escapeHtml(link.label)}
+                </a>
+              </li>
+            `;
+          }
+
+          return `
+            <li>
+              <a
+                class="document-link"
+                href="${escapeHtml(href)}"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <span class="document-tag">Link</span>
+                ${escapeHtml(link.label)}
               </a>
             </li>
           `;
@@ -287,12 +387,13 @@ function makeSessionMarkup(session, isOpen) {
   `;
 }
 
-function setupModal(page, phases) {
+function setupModal(page, phases, materials) {
   const modal = page.querySelector("[data-phase-modal]");
   const title = modal.querySelector("[data-modal-title]");
   const description = modal.querySelector("[data-modal-description]");
   const counter = modal.querySelector("[data-modal-count]");
   const sessionsHost = modal.querySelector("[data-modal-sessions]");
+  const linksHost = modal.querySelector("[data-modal-links]");
   const closeButton = modal.querySelector("[data-close-modal]");
   let lastTrigger = null;
 
@@ -309,6 +410,9 @@ function setupModal(page, phases) {
     title.textContent = phase.name;
     description.textContent = phase.description;
     counter.textContent = `${phase.sessionCount} sesiones`;
+    linksHost.hidden = true;
+    linksHost.innerHTML = "";
+    sessionsHost.hidden = false;
     sessionsHost.innerHTML = phase.sessions
       .map((session, index) => makeSessionMarkup(session, index === 0))
       .join("");
@@ -320,6 +424,19 @@ function setupModal(page, phases) {
         }
       });
     });
+    modal.hidden = false;
+    document.body.classList.add("modal-open");
+  }
+
+  function openResourceModal(material, trigger) {
+    lastTrigger = trigger;
+    title.textContent = material.title;
+    description.textContent = material.description;
+    counter.textContent = `${material.links.length} ${material.links.length === 1 ? "recurso" : "recursos"}`;
+    sessionsHost.hidden = true;
+    sessionsHost.innerHTML = "";
+    linksHost.hidden = false;
+    linksHost.innerHTML = makeResourceLinksMarkup(material.links);
     modal.hidden = false;
     document.body.classList.add("modal-open");
   }
@@ -336,13 +453,25 @@ function setupModal(page, phases) {
   if (!page.dataset.boundEvents) {
     page.addEventListener("click", (event) => {
       const trigger = event.target.closest("[data-phase-id]");
-      if (!trigger) {
+      if (trigger) {
+        const phase = phases.find((item) => item.id === trigger.dataset.phaseId);
+        if (phase) {
+          openModal(phase, trigger);
+        }
         return;
       }
 
-      const phase = phases.find((item) => item.id === trigger.dataset.phaseId);
-      if (phase) {
-        openModal(phase, trigger);
+      const resourceTrigger = event.target.closest("[data-resource-id]");
+      if (resourceTrigger) {
+        const material = materials.find((item) => item.id === resourceTrigger.dataset.resourceId);
+        if (material) {
+          openResourceModal(material, resourceTrigger);
+        }
+        return;
+      }
+
+      if (event.target.closest("[data-placeholder-link]")) {
+        event.preventDefault();
       }
     });
 
@@ -367,9 +496,11 @@ function setupModal(page, phases) {
 function initToolkitPage(page) {
   const phases = window.INTEP_TOOLKIT_DATA || [];
   const board = page.querySelector("[data-journey-board]");
+  const materialsHost = page.querySelector("[data-additional-materials]");
   renderStats(page.querySelector("[data-stats]"), phases);
   renderBoard(board, phases);
-  setupModal(page, phases);
+  renderAdditionalMaterials(materialsHost, ADDITIONAL_MATERIALS);
+  setupModal(page, phases, ADDITIONAL_MATERIALS);
 
   let resizeFrame = null;
   window.addEventListener("resize", () => {
