@@ -93,11 +93,11 @@ const ADDITIONAL_MATERIALS = [
     label: "Material adicional",
     title: "Infografías",
     description:
-      "Accede a las infografías organizadas por fase. Por ahora los enlaces son temporales mientras se comparte la versión final.",
+      "Accede a las infografías organizadas por fase, donde encontrarás elementos que serán útiles para el desarrollo de cada sesión.",
     links: [
       { label: "Fase 1", href: "https://drive.google.com/file/d/1OGmmWl4AlSKYbj4qNWNFI7L4dh0xeYS8/view?usp=sharing" },
       { label: "Fase 2", href: "https://drive.google.com/file/d/1azMxPZ5UuFran9X7gqsQLs3zx9bkJiMb/view?usp=sharing" },
-      { label: "Fase 3", href: "#" },
+      { label: "Fase 3", href: "https://drive.google.com/file/d/1uN4MsXHx5d3smTbx60bRo06jF-PDrJVe/view?usp=sharing" },
       { label: "Fase 4", href: "#" },
       { label: "Fase 5", href: "#" },
     ],
@@ -107,15 +107,41 @@ const ADDITIONAL_MATERIALS = [
     label: "Material adicional",
     title: "Instrumentos de valoración",
     description:
-      "Aquí aparecerán los instrumentos de evaluación por fase. De momento dejamos los accesos placeholder para completar luego.",
-    links: [
+      "Aquí aparecerán los instrumentos de valoración por fase.",
+    rows: [
       {
-        label: "Fase 1",
-        href: "https://docs.google.com/forms/d/e/1FAIpQLSfWgJqH9_7aT4-ZQusV1Z96pZSjzfdfrKisVEMJqX2RDY1a2A/viewform?usp=header",
+        phase: "Fase 1",
+        fieldJournal: {
+          label: "Diario de campo 1",
+          href: "https://docs.google.com/forms/d/e/1FAIpQLSfWgJqH9_7aT4-ZQusV1Z96pZSjzfdfrKisVEMJqX2RDY1a2A/viewform?usp=header",
+        },
+        deliverable: null,
       },
       {
-        label: "Fase 2",
-        href: "https://docs.google.com/forms/d/e/1FAIpQLSfmlYIOUaUS5CeRXbeqof60ZMuAA3JqYYzmNnx4tIZwf2f9Vg/viewform?usp=header",
+        phase: "Fase 2",
+        fieldJournal: {
+          label: "Diario de campo 2",
+          href: "https://docs.google.com/forms/d/e/1FAIpQLSfmlYIOUaUS5CeRXbeqof60ZMuAA3JqYYzmNnx4tIZwf2f9Vg/viewform?usp=header",
+        },
+        deliverable: {
+          label: "Rúbrica",
+          href: "https://drive.google.com/file/d/1Mo_nhOeBlwAyUh_5YCXQxa2EPYSrgYP1/view?usp=sharing",
+        },
+      },
+      {
+        phase: "Fase 3",
+        fieldJournal: null,
+        deliverable: null,
+      },
+      {
+        phase: "Fase 4",
+        fieldJournal: null,
+        deliverable: null,
+      },
+      {
+        phase: "Fase 5",
+        fieldJournal: null,
+        deliverable: null,
       },
     ],
   },
@@ -221,7 +247,8 @@ function renderAdditionalMaterials(host, materials) {
 
   host.innerHTML = materials
     .map((material, index) => {
-      const itemLabel = material.links.length === 1 ? "recurso" : "recursos";
+      const itemCount = Array.isArray(material.rows) ? material.rows.length : material.links.length;
+      const itemLabel = itemCount === 1 ? "recurso" : "recursos";
       return `
         <button
           class="resource-card resource-tone-${(index % 2) + 1}"
@@ -229,10 +256,9 @@ function renderAdditionalMaterials(host, materials) {
           data-resource-id="${material.id}"
           aria-label="${escapeHtml(material.title)}"
         >
-          <span class="resource-card-label">${escapeHtml(material.label)}</span>
           <strong>${escapeHtml(material.title)}</strong>
           <p>${escapeHtml(material.description)}</p>
-          <span class="resource-card-meta">${material.links.length} ${itemLabel}</span>
+          <span class="resource-card-meta">${itemCount} ${itemLabel}</span>
         </button>
       `;
     })
@@ -326,6 +352,63 @@ function makeResourceLinksMarkup(links) {
         })
         .join("")}
     </ul>
+  `;
+}
+
+function makeMatrixCellMarkup(item) {
+  if (!item || !normalizeText(item.href) || normalizeText(item.href) === "#") {
+    return `<span class="valuation-empty" aria-hidden="true"></span>`;
+  }
+
+  return `
+    <a
+      class="valuation-link"
+      href="${escapeHtml(item.href)}"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      ${escapeHtml(item.label)}
+    </a>
+  `;
+}
+
+function makeValuationMatrixMarkup(rows) {
+  if (!rows.length) {
+    return `<p class="empty-copy">No hay enlaces disponibles todavía.</p>`;
+  }
+
+  return `
+    <table class="valuation-table">
+      <colgroup>
+        <col style="width: 16.6667%" />
+        <col style="width: 41.6667%" />
+        <col style="width: 41.6667%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th scope="col">Fases</th>
+          <th scope="col">Diarios de campo</th>
+          <th scope="col">Entregable</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${rows
+          .map(
+            (row) => `
+              <tr>
+                <td class="valuation-phase">${escapeHtml(row.phase)}</td>
+                <td class="valuation-cell">
+                  ${makeMatrixCellMarkup(row.fieldJournal)}
+                </td>
+                <td class="valuation-cell">
+                  ${makeMatrixCellMarkup(row.deliverable)}
+                </td>
+              </tr>
+            `
+          )
+          .join("")}
+      </tbody>
+    </table>
   `;
 }
 
@@ -438,11 +521,14 @@ function openModal(phase, trigger) {
     lastTrigger = trigger;
     title.textContent = material.title;
     description.textContent = material.description;
-    counter.textContent = `${material.links.length} ${material.links.length === 1 ? "recurso" : "recursos"}`;
+    const itemCount = Array.isArray(material.rows) ? material.rows.length : material.links.length;
+    counter.textContent = `${itemCount} ${itemCount === 1 ? "fase" : "fases"}`;
     sessionsHost.hidden = true;
     sessionsHost.innerHTML = "";
     linksHost.hidden = false;
-    linksHost.innerHTML = makeResourceLinksMarkup(material.links);
+    linksHost.innerHTML = Array.isArray(material.rows)
+      ? makeValuationMatrixMarkup(material.rows)
+      : makeResourceLinksMarkup(material.links);
     modal.hidden = false;
     document.body.classList.add("modal-open");
   }
