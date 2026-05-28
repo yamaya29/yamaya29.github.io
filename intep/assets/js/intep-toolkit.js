@@ -4,7 +4,7 @@ const PHASE_DOCUMENT_LINKS = {
   "ABP - Guía 2.pdf":
     "https://drive.google.com/file/d/1Q-dRclLBUBc1Z3bfNptH7qFHCk3p83c9/view?usp=drivesdk",
   "TALLER METODOLÓGICO - Comunicación Científica para estudiantes por el dinamizador.docx":
-    "https://docs.google.com/document/d/11vZMRi4Jr0OEJHPhcLFNPYl_BHGYmINA/edit?usp=sharing&ouid=100573075960276525015&rtpof=true&sd=true",
+    "https://drive.google.com/file/d/1I3_Cm1FQhGeM7lMDbpH7beOKoWN469H5/view?usp=sharing",
   "ABP - Guía 5.pdf":
     "https://drive.google.com/file/d/1gYBmIyAmwTAe0-EDdnIOFFISyBMcVbeM/view?usp=drivesdk",
   "DT - Empatía y actores.pdf":
@@ -12,7 +12,7 @@ const PHASE_DOCUMENT_LINKS = {
   "EAFIT Semilleros - Formular preguntas de investigación.pdf":
     "https://drive.google.com/file/d/1x--xlq2G539KUY65-Y_jIDIxRjO4zGA5/view?usp=drivesdk",
   "TALLER METODOLÓGICO - Storytelling  para estudiantes por el dinamizador.docx":
-    "https://docs.google.com/document/d/1lCGgyxMuotCvw3N9fQOupJfRAIQcxWdt/edit?usp=sharing&ouid=100573075960276525015&rtpof=true&sd=true",
+    "https://drive.google.com/file/d/1aYIP7qxhdeecV4SHR7aInWxyhIgdeDV0/view?usp=sharing",
   "DT - Ideación divergente.pdf":
     "https://drive.google.com/file/d/1CSfxGodTAyUSiQUUaSxFrZJ3BCdClLzN/view?usp=drivesdk",
   "DT - Priorización de ideas.pdf":
@@ -22,7 +22,7 @@ const PHASE_DOCUMENT_LINKS = {
   "ABP - Guía 6.pdf":
     "https://drive.google.com/file/d/1ob4gdwEVjbTxS2KxsPystW6mYVQUjy7r/view?usp=drivesdk",
   "TALLER METODOLÓGICO - Comunicación Responsable para estudiantes por el dinamizador.docx":
-    "https://docs.google.com/document/d/1EmjpUpSDU30tSO2K79uGxBhFn5HrFzBX/edit?usp=sharing&ouid=100573075960276525015&rtpof=true&sd=true",
+    "https://drive.google.com/file/d/1svGJBXY3gcXDYXOuOX9fpw0jbc1VD5Pc/view?usp=sharing",
   "EAFIT Semilleros - Plan de recolección de datos.pdf":
     "https://drive.google.com/file/d/1RF9zkkzbUrVv7yDG_la953JBVbyxQgEc/view?usp=drivesdk",
   "EAFIT Semilleros - Primer experimento.pdf":
@@ -40,7 +40,7 @@ const PHASE_DOCUMENT_LINKS = {
   "DT - Prueba del prototipo.pdf":
     "https://drive.google.com/file/d/1jkpOPZGyCmJolST3XyKXVNbNAQ547seP/view?usp=drivesdk",
   "TALLER METODOLÓGICO - INFOGRAFÍAS para estudiantes por el dinamizador.docx":
-    "https://docs.google.com/document/d/1auD5-sKXFfLxAv8eJwuEqvvhOdJrG44-/edit?usp=sharing&ouid=100573075960276525015&rtpof=true&sd=true",
+    "https://drive.google.com/file/d/10RFD0CiK7svrjrkIP7sDbXNtP6weUu_3/view?usp=sharing",
   "Programación - Sesión 5.pdf":
     "https://drive.google.com/file/d/1KVZ0nxHR6tuSn-9ybZ4MxSCR4mXNKLmP/view?usp=drivesdk",
   "Programación - Sesión 9.pdf":
@@ -58,7 +58,7 @@ const PHASE_DOCUMENT_LINKS = {
   "Programación - Sesión 11.pdf":
     "https://drive.google.com/file/d/1dXnWPhYLK6zjNuL_VFZUYDX19q17-_4w/view?usp=drivesdk",
   "TALLER METODOLÓGICO Narrativas para estudiantes por el dinamizador.docx":
-    "https://docs.google.com/document/d/1WAGBeHaLahBOUgYxqLNpgJaq1lA8-P4c/edit?usp=sharing&ouid=100573075960276525015&rtpof=true&sd=true",
+    "https://drive.google.com/file/d/1od58Svn6yHM6S23JSnNUYHZHylfFoPWI/view?usp=sharing",
   "EAFIT Programación - Presentación final y celebración.pdf":
     "https://drive.google.com/file/d/1SFJuJUpadEABm2_r7WGMfZwoJyrVIT3b/view?usp=drivesdk",
   "Programación - Sesión 12.pdf":
@@ -95,8 +95,8 @@ const ADDITIONAL_MATERIALS = [
     description:
       "Accede a las infografías organizadas por fase. Por ahora los enlaces son temporales mientras se comparte la versión final.",
     links: [
-      { label: "Fase 1", href: "#" },
-      { label: "Fase 2", href: "#" },
+      { label: "Fase 1", href: "https://drive.google.com/file/d/1OGmmWl4AlSKYbj4qNWNFI7L4dh0xeYS8/view?usp=sharing" },
+      { label: "Fase 2", href: "https://drive.google.com/file/d/1azMxPZ5UuFran9X7gqsQLs3zx9bkJiMb/view?usp=sharing" },
       { label: "Fase 3", href: "#" },
       { label: "Fase 4", href: "#" },
       { label: "Fase 5", href: "#" },
@@ -109,8 +109,14 @@ const ADDITIONAL_MATERIALS = [
     description:
       "Aquí aparecerán los instrumentos de evaluación por fase. De momento dejamos los accesos placeholder para completar luego.",
     links: [
-      { label: "Fase 1", href: "#" },
-      { label: "Fase 2", href: "#" },
+      {
+        label: "Fase 1",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLSfWgJqH9_7aT4-ZQusV1Z96pZSjzfdfrKisVEMJqX2RDY1a2A/viewform?usp=header",
+      },
+      {
+        label: "Fase 2",
+        href: "https://docs.google.com/forms/d/e/1FAIpQLSfmlYIOUaUS5CeRXbeqof60ZMuAA3JqYYzmNnx4tIZwf2f9Vg/viewform?usp=header",
+      },
     ],
   },
 ];
@@ -405,16 +411,16 @@ function setupModal(page, phases, materials) {
     }
   }
 
-  function openModal(phase, trigger) {
-    lastTrigger = trigger;
-    title.textContent = phase.name;
-    description.textContent = phase.description;
-    counter.textContent = `${phase.sessionCount} sesiones`;
-    linksHost.hidden = true;
-    linksHost.innerHTML = "";
-    sessionsHost.hidden = false;
-    sessionsHost.innerHTML = phase.sessions
-      .map((session, index) => makeSessionMarkup(session, index === 0))
+function openModal(phase, trigger) {
+  lastTrigger = trigger;
+  title.textContent = phase.name;
+  description.textContent = phase.description;
+  counter.textContent = `${phase.sessionCount} sesiones`;
+  linksHost.hidden = true;
+  linksHost.innerHTML = "";
+  sessionsHost.hidden = false;
+  sessionsHost.innerHTML = phase.sessions
+      .map((session) => makeSessionMarkup(session, false))
       .join("");
     const renderedDetails = sessionsHost.querySelectorAll(".session-card");
     renderedDetails.forEach((details) => {
