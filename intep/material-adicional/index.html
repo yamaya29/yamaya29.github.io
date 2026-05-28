@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INTEP Material Adicional</title>
+    <meta
+      name="description"
+      content="Material adicional de la caja de herramientas de INTEP."
+    />
+    <link rel="stylesheet" href="../assets/css/intep-toolkit.css?v=1" />
+  </head>
+  <body class="toolkit-page" data-toolkit-page data-toolkit-view="materials">
+    <main class="page-shell">
+      <nav class="toolkit-tabs" aria-label="Secciones de INTEP">
+        <a class="toolkit-tab" href="../caja-herramientas/">Caja de herramientas</a>
+        <a class="toolkit-tab is-active" href="../material-adicional/" aria-current="page">
+          Material adicional
+        </a>
+      </nav>
+
+      <section class="intro-panel">
+        <p class="eyebrow">INTEP · Caja de herramientas</p>
+        <h1>Material adicional</h1>
+        <div class="intro-copy">
+          <p>
+            Consulta los recursos complementarios organizados por tipo y abre
+            cada bloque para ver los enlaces disponibles por fase.
+          </p>
+        </div>
+        <div class="stats-row" data-stats></div>
+      </section>
+
+      <section class="resources-section">
+        <div class="resources-copy">
+          <h2>Material adicional</h2>
+          <p>
+            Aquí encontrarás accesos rápidos a recursos complementarios
+            organizados por tipo.
+          </p>
+        </div>
+        <div class="resource-grid" data-additional-materials></div>
+      </section>
+    </main>
+
+    <div class="phase-modal" data-phase-modal hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">
+          ×
+        </button>
+        <section class="modal-hero">
+          <span class="modal-kicker" data-modal-count></span>
+          <h2 class="modal-title" id="modal-title" data-modal-title></h2>
+          <p class="modal-description" data-modal-description></p>
+        </section>
+        <div class="accordion-list" data-modal-sessions></div>
+        <div class="resource-link-list" data-modal-links hidden></div>
+      </div>
+    </div>
+
+    <script src="../assets/data/intep-toolkit-data.js?v=1"></script>
+    <script src="../assets/js/intep-toolkit.js?v=1"></script>
+  </body>
+</html>
