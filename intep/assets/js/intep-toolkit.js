@@ -266,8 +266,18 @@ function renderAdditionalMaterials(host, materials) {
 }
 
 function makeDocumentsMarkup(documents) {
+  const noticesMarkup = `
+    <ul class="document-notice-list">
+      <li>Es necesario tener sesión de Google iniciada con correo <code>@intep.edu.co</code> para acceder al material.</li>
+      <li>Todo el material compartido es propiedad del <strong>MEN/INTEP</strong>. Prohibido divulgar.</li>
+    </ul>
+  `;
+
   if (!documents.length) {
-    return `<p class="empty-copy">No hay documento referenciado para esta sesión.</p>`;
+    return `
+      <p class="empty-copy">No hay documento referenciado para esta sesión.</p>
+      ${noticesMarkup}
+    `;
   }
 
   return `
@@ -305,6 +315,7 @@ function makeDocumentsMarkup(documents) {
         })
         .join("")}
     </ul>
+    ${noticesMarkup}
   `;
 }
 
