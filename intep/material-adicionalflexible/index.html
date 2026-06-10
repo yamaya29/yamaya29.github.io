@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INTEP Material Adicional Flexible</title>
+    <meta
+      name="description"
+      content="Material adicional de la caja de herramientas flexibilizada de INTEP."
+    />
+    <link rel="stylesheet" href="../assets/css/intep-toolkit-flexible.css?v=1" />
+  </head>
+  <body class="toolkit-page" data-toolkit-page data-toolkit-view="materials">
+    <main class="page-shell">
+      <nav class="toolkit-tabs" aria-label="Secciones de INTEP">
+        <a class="toolkit-tab" href="../caja-herramientasflexible/index.html">
+          Caja de herramientas flexibilizada
+        </a>
+        <a
+          class="toolkit-tab is-active"
+          href="../material-adicionalflexible/index.html"
+          aria-current="page"
+        >
+          Material adicional
+        </a>
+      </nav>
+
+      <section class="intro-panel">
+        <p class="eyebrow">Centros de Interés en ciencia y programación</p>
+        <h1>Material adicional</h1>
+        <div class="intro-copy">
+          <p>
+            Consulta los recursos complementarios de la ruta flexibilizada y abre
+            cada bloque para ver los enlaces disponibles por fase.
+          </p>
+        </div>
+      </section>
+
+      <section class="resources-section">
+        <div class="resource-grid" data-additional-materials></div>
+      </section>
+    </main>
+
+    <div class="phase-modal" data-phase-modal hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">
+          ×
+        </button>
+        <section class="modal-hero">
+          <span class="modal-kicker" data-modal-count></span>
+          <h2 class="modal-title" id="modal-title" data-modal-title></h2>
+          <p class="modal-description" data-modal-description></p>
+        </section>
+        <div class="accordion-list" data-modal-sessions></div>
+        <div class="resource-link-list" data-modal-links hidden></div>
+      </div>
+    </div>
+
+    <script src="../assets/data/intep-toolkit-flexible-data.js?v=1"></script>
+    <script src="../assets/js/intep-toolkit-flexible.js?v=1"></script>
+  </body>
+</html>

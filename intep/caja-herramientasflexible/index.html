@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INTEP Caja de Herramientas Flexibilizada</title>
+    <meta
+      name="description"
+      content="Ruta metodológica visual de la caja de herramientas flexibilizada de INTEP."
+    />
+    <link rel="stylesheet" href="../assets/css/intep-toolkit-flexible.css?v=1" />
+  </head>
+  <body class="toolkit-page" data-toolkit-page data-toolkit-view="journey">
+    <main class="page-shell">
+      <nav class="toolkit-tabs" aria-label="Secciones de INTEP">
+        <a
+          class="toolkit-tab is-active"
+          href="../caja-herramientasflexible/index.html"
+          aria-current="page"
+        >
+          Caja de herramientas flexibilizada
+        </a>
+        <a class="toolkit-tab" href="../material-adicionalflexible/index.html">
+          Material adicional
+        </a>
+      </nav>
+
+      <section class="intro-panel">
+        <p class="eyebrow">Centros de Interés en ciencia y programación</p>
+        <h1>Caja de herramientas flexibilizada</h1>
+        <div class="intro-copy">
+          <p>
+            Explora las fases del recorrido flexibilizado y abre cada estación para
+            ver sus sesiones, objetivos, actividades sugeridas y documentos
+            referenciados.
+          </p>
+        </div>
+        <div class="stats-row" data-stats></div>
+      </section>
+
+      <section class="journey-section">
+        <div class="journey-copy">
+          <h2>Un recorrido por fases</h2>
+          <p>Cada estación representa una fase. Haz clic para abrir su descripción.</p>
+        </div>
+        <div class="journey-board" data-journey-board>
+          <svg class="route-svg" data-route-svg aria-hidden="true"></svg>
+          <div class="journey-stations" data-journey-stations></div>
+        </div>
+      </section>
+    </main>
+
+    <div class="phase-modal" data-phase-modal hidden>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" type="button" data-close-modal aria-label="Cerrar">
+          ×
+        </button>
+        <section class="modal-hero">
+          <span class="modal-kicker" data-modal-count></span>
+          <h2 class="modal-title" id="modal-title" data-modal-title></h2>
+          <p class="modal-description" data-modal-description></p>
+        </section>
+        <div class="accordion-list" data-modal-sessions></div>
+        <div class="resource-link-list" data-modal-links hidden></div>
+      </div>
+    </div>
+
+    <script src="../assets/data/intep-toolkit-flexible-data.js?v=1"></script>
+    <script src="../assets/js/intep-toolkit-flexible.js?v=1"></script>
+  </body>
+</html>
