@@ -982,6 +982,24 @@ a {
   outline: none;
 }
 
+.valuation-link-muted {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.valuation-text {
+  display: inline-block;
+  max-width: 18ch;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.valuation-merged {
+  background: linear-gradient(180deg, rgba(255, 251, 240, 0.96), rgba(255, 244, 252, 0.96));
+}
+
 .valuation-empty {
   display: block;
   width: 100%;

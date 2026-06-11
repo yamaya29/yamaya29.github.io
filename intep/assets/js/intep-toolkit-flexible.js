@@ -131,7 +131,7 @@ function renderAdditionalMaterials(host, materials) {
 
   host.innerHTML = materials
     .map((material, index) => {
-      const itemCount = Array.isArray(material.rows) ? material.rows.length : material.links.length;
+      const itemCount = getMaterialItemCount(material);
       const itemLabel = itemCount === 1 ? "recurso" : "recursos";
       return `
         <button
@@ -250,59 +250,140 @@ function makeResourceLinksMarkup(links) {
   `;
 }
 
+function getMaterialRows(material) {
+  if (Array.isArray(material?.table?.rows)) {
+    return material.table.rows;
+  }
+
+  if (Array.isArray(material?.rows)) {
+    return material.rows;
+  }
+
+  return [];
+}
+
+function getMaterialItemCount(material) {
+  const rows = getMaterialRows(material);
+  if (rows.length) {
+    return rows.length;
+  }
+
+  if (Array.isArray(material?.links)) {
+    return material.links.length;
+  }
+
+  return 0;
+}
+
 function makeMatrixCellMarkup(item) {
-  if (!item || !normalizeText(item.href) || normalizeText(item.href) === "#") {
+  if (!item) {
     return `<span class="valuation-empty" aria-hidden="true"></span>`;
   }
 
-  return `
-    <a
-      class="valuation-link"
-      href="${escapeHtml(item.href)}"
-      target="_blank"
-      rel="noreferrer noopener"
-    >
-      ${escapeHtml(item.label)}
-    </a>
-  `;
+  const text = normalizeText(item.text);
+  const label = normalizeText(item.label);
+  const href = normalizeText(item.href);
+
+  if (href && href !== "#") {
+    return `
+      <a
+        class="valuation-link"
+        href="${escapeHtml(href)}"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        ${escapeHtml(label || text || href)}
+      </a>
+    `;
+  }
+
+  if (label) {
+    return `<span class="valuation-link valuation-link-muted">${escapeHtml(label)}</span>`;
+  }
+
+  if (text || label) {
+    return `<span class="valuation-text">${escapeHtml(text || label)}</span>`;
+  }
+
+  return `<span class="valuation-empty" aria-hidden="true"></span>`;
 }
 
-function makeValuationMatrixMarkup(rows) {
+function makeValuationMatrixMarkup(tableConfigOrRows) {
+  const table = Array.isArray(tableConfigOrRows)
+    ? {
+        headers: ["Fases", "Diarios de campo", "Entregable"],
+        columns: ["phase", "fieldJournal", "deliverable"],
+        rows: tableConfigOrRows,
+      }
+    : tableConfigOrRows;
+  const rows = Array.isArray(table?.rows) ? table.rows : [];
+
   if (!rows.length) {
     return `<p class="empty-copy">No hay enlaces disponibles todavía.</p>`;
   }
 
+  const headers = Array.isArray(table.headers) && table.headers.length
+    ? table.headers
+    : ["Fases", "Diarios de campo", "Entregable"];
+  const columns = Array.isArray(table.columns) && table.columns.length
+    ? table.columns
+    : ["phase", "fieldJournal", "deliverable"];
+  const mergedCells = Array.isArray(table.mergedCells) ? table.mergedCells : [];
+  const skippedCells = new Set();
+  const columnWidth = `${100 / columns.length}%`;
+
+  const renderedRows = rows
+    .map((row, rowIndex) => {
+      const cells = columns
+        .map((columnKey) => {
+          const merge = mergedCells.find((item) => item.column === columnKey && item.startRow === rowIndex);
+          if (merge) {
+            for (let offset = 1; offset < merge.rowSpan; offset += 1) {
+              skippedCells.add(`${rowIndex + offset}:${columnKey}`);
+            }
+          }
+
+          if (skippedCells.has(`${rowIndex}:${columnKey}`)) {
+            return "";
+          }
+
+          const cellClasses = ["valuation-cell"];
+          if (columnKey === "phase") {
+            cellClasses.push("valuation-phase");
+          }
+          if (merge) {
+            cellClasses.push("valuation-merged");
+          }
+
+          const rowSpan = merge ? ` rowspan="${merge.rowSpan}"` : "";
+          const cellValue = row[columnKey];
+          const cellContent = columnKey === "phase"
+            ? escapeHtml(cellValue)
+            : makeMatrixCellMarkup(cellValue);
+
+          return `
+            <td class="${cellClasses.join(" ")}"${rowSpan}>
+              ${cellContent}
+            </td>
+          `;
+        })
+        .join("");
+
+      return `<tr>${cells}</tr>`;
+    })
+    .join("");
+
   return `
     <table class="valuation-table">
       <colgroup>
-        <col style="width: 16.6667%" />
-        <col style="width: 41.6667%" />
-        <col style="width: 41.6667%" />
+        ${columns.map(() => `<col style="width: ${columnWidth}" />`).join("")}
       </colgroup>
       <thead>
         <tr>
-          <th scope="col">Fases</th>
-          <th scope="col">Diarios de campo</th>
-          <th scope="col">Entregable</th>
+          ${headers.map((header) => `<th scope="col">${escapeHtml(header)}</th>`).join("")}
         </tr>
       </thead>
-      <tbody>
-        ${rows
-          .map(
-            (row) => `
-              <tr>
-                <td class="valuation-phase">${escapeHtml(row.phase)}</td>
-                <td class="valuation-cell">
-                  ${makeMatrixCellMarkup(row.fieldJournal)}
-                </td>
-                <td class="valuation-cell">
-                  ${makeMatrixCellMarkup(row.deliverable)}
-                </td>
-              </tr>
-            `
-          )
-          .join("")}
-      </tbody>
+      <tbody>${renderedRows}</tbody>
     </table>
   `;
 }
@@ -418,13 +499,13 @@ function setupModal(page, phases, materials) {
     lastTrigger = trigger;
     title.textContent = material.title;
     description.textContent = material.description;
-    const itemCount = Array.isArray(material.rows) ? material.rows.length : material.links.length;
+    const itemCount = getMaterialItemCount(material);
     counter.textContent = `${itemCount} ${itemCount === 1 ? "fase" : "fases"}`;
     sessionsHost.hidden = true;
     sessionsHost.innerHTML = "";
     linksHost.hidden = false;
-    linksHost.innerHTML = Array.isArray(material.rows)
-      ? makeValuationMatrixMarkup(material.rows)
+    linksHost.innerHTML = getMaterialRows(material).length
+      ? makeValuationMatrixMarkup(material.table || material.rows)
       : makeResourceLinksMarkup(material.links);
     modal.hidden = false;
     document.body.classList.add("modal-open");

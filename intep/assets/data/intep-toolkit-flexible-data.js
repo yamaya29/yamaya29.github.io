@@ -381,14 +381,54 @@ window.INTEP_FLEX_TOOLKIT = {
       label: "Material adicional",
       title: "Infografías",
       description:
-        "Accede a las infografías organizadas por fase. Los enlaces quedarán disponibles cuando se compartan las versiones finales.",
-      links: [
-        { label: "Fase 1", href: "#" },
-        { label: "Fase 2", href: "#" },
-        { label: "Fase 3", href: "#" },
-        { label: "Fase 4", href: "#" },
-        { label: "Fase 5", href: "#" },
-      ],
+        "Accede a las infografías organizadas por fase, junto con un espacio para recursos generales compartidos por todo el recorrido.",
+      table: {
+        headers: ["Infografías", "Generales"],
+        columns: ["infographics", "general"],
+        rows: [
+          {
+            infographics: {
+              label: "Fase 1",
+              href: "https://drive.google.com/file/d/1Bi-dK7kGzzIjYL5edchpK2Xrutu1c10F/view?usp=sharing",
+            },
+            general: {
+              label: "PIOM",
+              href: "https://drive.google.com/file/d/1mZveJJWxeemOQsJx9ltSjnSk6Ae1WXeq/view?usp=sharing",
+            },
+          },
+          {
+            infographics: {
+              label: "Fase 2",
+              href: "https://drive.google.com/file/d/1Xzhtofn11O1bpn4qXHQDz5mjewR6tdH1/view?usp=sharing",
+            },
+          },
+          {
+            infographics: {
+              label: "Fase 3",
+              href: "https://drive.google.com/file/d/1oygSMPKQJ-7pfcTKof7pg8CA0dQP6ZZ5/view?usp=sharing",
+            },
+          },
+          {
+            infographics: {
+              label: "Fase 4",
+              href: "#",
+            },
+          },
+          {
+            infographics: {
+              label: "Fase 5",
+              href: "#",
+            },
+          },
+        ],
+        mergedCells: [
+          {
+            column: "general",
+            startRow: 0,
+            rowSpan: 5,
+          },
+        ],
+      },
     },
     {
       id: "instrumentos-valoración",
@@ -396,42 +436,46 @@ window.INTEP_FLEX_TOOLKIT = {
       title: "Instrumentos de valoración",
       description:
         "Se mantiene la misma estructura de valoración por fase para consultar diarios de campo y entregables ya publicados.",
-      rows: [
-        {
-          phase: "Fase 1",
-          fieldJournal: {
-            label: "Diario de campo 1",
-            href: "https://docs.google.com/forms/d/e/1FAIpQLSfWgJqH9_7aT4-ZQusV1Z96pZSjzfdfrKisVEMJqX2RDY1a2A/viewform?usp=header",
+      table: {
+        headers: ["Fases", "Diarios de campo", "Entregable"],
+        columns: ["phase", "fieldJournal", "deliverable"],
+        rows: [
+          {
+            phase: "Fase 1",
+            fieldJournal: {
+              label: "Diario de campo 1",
+              href: "https://docs.google.com/forms/d/e/1FAIpQLSfWgJqH9_7aT4-ZQusV1Z96pZSjzfdfrKisVEMJqX2RDY1a2A/viewform?usp=header",
+            },
+            deliverable: null,
           },
-          deliverable: null,
-        },
-        {
-          phase: "Fase 2",
-          fieldJournal: {
-            label: "Diario de campo 2",
-            href: "https://docs.google.com/forms/d/e/1FAIpQLSfmlYIOUaUS5CeRXbeqof60ZMuAA3JqYYzmNnx4tIZwf2f9Vg/viewform?usp=header",
+          {
+            phase: "Fase 2",
+            fieldJournal: {
+              label: "Diario de campo 2",
+              href: "https://docs.google.com/forms/d/e/1FAIpQLSfmlYIOUaUS5CeRXbeqof60ZMuAA3JqYYzmNnx4tIZwf2f9Vg/viewform?usp=header",
+            },
+            deliverable: {
+              label: "Rúbrica",
+              href: "https://drive.google.com/file/d/1Mo_nhOeBlwAyUh_5YCXQxa2EPYSrgYP1/view?usp=sharing",
+            },
           },
-          deliverable: {
-            label: "Rúbrica",
-            href: "https://drive.google.com/file/d/1Mo_nhOeBlwAyUh_5YCXQxa2EPYSrgYP1/view?usp=sharing",
+          {
+            phase: "Fase 3",
+            fieldJournal: null,
+            deliverable: null,
           },
-        },
-        {
-          phase: "Fase 3",
-          fieldJournal: null,
-          deliverable: null,
-        },
-        {
-          phase: "Fase 4",
-          fieldJournal: null,
-          deliverable: null,
-        },
-        {
-          phase: "Fase 5",
-          fieldJournal: null,
-          deliverable: null,
-        },
-      ],
+          {
+            phase: "Fase 4",
+            fieldJournal: null,
+            deliverable: null,
+          },
+          {
+            phase: "Fase 5",
+            fieldJournal: null,
+            deliverable: null,
+          },
+        ],
+      },
     },
   ],
 };
