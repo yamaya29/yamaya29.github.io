@@ -336,12 +336,16 @@ window.INTEP_FLEX_TOOLKIT = {
       "https://drive.google.com/file/d/1Q-dRclLBUBc1Z3bfNptH7qFHCk3p83c9/view?usp=drivesdk",
     "EAFIT Semilleros - Formular preguntas de investigación.pdf":
       "https://drive.google.com/file/d/1x--xlq2G539KUY65-Y_jIDIxRjO4zGA5/view?usp=drivesdk",
+    "EAFIT Semilleros - Ideamos soluciones.pdf":
+      "https://drive.google.com/file/d/1ErZFWjHFGTzhs4REdf5sbuP20VzkfqTF/view?usp=drivesdk",
     "ABP - Guía 6.pdf":
       "https://drive.google.com/file/d/1ob4gdwEVjbTxS2KxsPystW6mYVQUjy7r/view?usp=drivesdk",
     "EAFIT Semilleros - Primer experimento.pdf":
       "https://drive.google.com/file/d/1cglED1K6-qTFlgyaBtWzVf8cG_j2uFg3/view?usp=drivesdk",
     "EAFIT Semilleros - Sistematización y análisis de datos.pdf":
       "https://drive.google.com/file/d/1Me_CAY08wdBNAwFMaz9C05K9r5hxJ4Kg/view?usp=drivesdk",
+    "Programación - Sesión 4.pdf":
+      "https://drive.google.com/file/d/1HOWQKahMuHKoRAh3DSec9krETTIhq3Pz/view?usp=drivesdk",
     "Programación - Sesión 9.pdf":
       "https://drive.google.com/file/d/11mhEOCHFhOSzWdZwGAEBJvmfOJW_ZGbH/view?usp=drivesdk",
     "Programación - Sesión 10.pdf":
