@@ -56,7 +56,7 @@ window.INTEP_FLEX_TOOLKIT = {
           guideName: "Guía 2\nProfundizando en la fase\nAPRENDO del ABP",
           activity:
             "Paso 1-4\nIndagación inicial: Exploran situaciones del contexto, organizan preguntas, formulan hipótesis preliminares y delimitan el problema que orientará el proyecto.\n\nDesarrollo sugerido\nMomento 1: Exploración de situaciones o problemáticas del contexto.\nMomento 2: Organización de preguntas e hipótesis iniciales.\nMomento 3: Delimitación del problema que trabajará el equipo.",
-          pages: "(Paso 1-4: p. 3-5)",
+          pages: "(Paso 1-4: p. 3-4)",
           documents: ["ABP - Guía 2.pdf"],
         },
         {
@@ -105,7 +105,7 @@ window.INTEP_FLEX_TOOLKIT = {
           guideName: "Ideamos soluciones a partir de nuestros hallazgos",
           activity:
             "Actividad 2\nDel hallazgo a la idea: Transforman los hallazgos de la investigación en alternativas de solución y seleccionan una propuesta inicial.\n\nDesarrollo sugerido\nMomento 1: Recordatorio de hallazgos y activación de ideas.\nMomento 2: Lluvia de ideas y agrupación de propuestas.\nMomento 3: Selección de una o dos ideas viables y diseño inicial en cartulina.\nMomento 4: Socialización breve de la idea priorizada.",
-          pages: "(Actividad 2: p. 5-10)",
+          pages: "(Actividad 2: p. 4-9)",
           documents: ["EAFIT Semilleros - Ideamos soluciones.pdf"],
         },
         {
@@ -144,7 +144,7 @@ window.INTEP_FLEX_TOOLKIT = {
           guideName: "Primer experimento",
           activity:
             "Actividad 1\nConstrucción del experimento: Diseñan, planean y ejecutan una primera prueba de la solución planteada.\n\nDesarrollo sugerido\nMomento 1: Recordatorio de la idea seleccionada y definición de lo que se quiere probar.\nMomento 2: Planeación breve del experimento, materiales y criterios de observación.\nMomento 3: Construcción o simulación, registro de evidencias y socialización parcial de avances.",
-          pages: "(Actividad 1: p. 5-9)",
+          pages: "(Actividad 1: p. 3-8)",
           documents: ["EAFIT Semilleros - Primer experimento.pdf"],
         },
         {
@@ -162,7 +162,7 @@ window.INTEP_FLEX_TOOLKIT = {
           guideName: "Sistematización y análisis de datos",
           activity:
             "Actividad 2\nEl mural de patrones: Sistematizan la información recolectada, agrupan datos en categorías y formulan hallazgos clave.\n\nDesarrollo sugerido\nMomento 1: Organización de los datos recolectados en un formato breve.\nMomento 2: Agrupación en categorías o temas comunes.\nMomento 3: Formulación y socialización de hallazgos preliminares.",
-          pages: "(Actividad 2: p. 7-10)",
+          pages: "(Actividad 2: p. 5-7)",
           documents: ["EAFIT Semilleros - Sistematización y análisis de datos.pdf"],
         },
       ],
@@ -193,7 +193,7 @@ window.INTEP_FLEX_TOOLKIT = {
           guideName: "Programación - Sesión 4\nConstruyamos nuestro primer prototipo",
           activity:
             "Actividad 1\n¿Qué es un prototipo?: Introducen el sentido del prototipado con ejemplos cercanos.\n\nActividad 2\nBoceto rápido de la solución: Representan la idea antes de construirla.\n\nActividad 3\nConstruyamos el prototipo: Elaboran una primera versión funcional con materiales disponibles.\n\nActividad 4\nGalería de prototipos y retroalimentación: Comparten el resultado y reciben comentarios constructivos.\n\nDesarrollo sugerido\nMomento 1: Comprensión del prototipo y boceto rápido de la solución.\nMomento 2: Construcción del prototipo inicial.\nMomento 3: Presentación breve y retroalimentación para orientar mejoras.",
-          pages: "(Actividad 1-4: p. 4-6)",
+          pages: "(Actividad 1-4: p. 5-6)",
           documents: ["Programación - Sesión 4.pdf"],
         },
         {
@@ -232,7 +232,7 @@ window.INTEP_FLEX_TOOLKIT = {
           guideName: "Programación - Sesión 10\nValidamos nuestro impacto",
           activity:
             "Actividad 1\nVolvemos al reto inicial: Recuperan el propósito del proyecto y los criterios con los que juzgarán su impacto.\n\nActividad 2\nPonemos a prueba nuestro impacto: Realizan demostraciones o simulaciones del prototipo y recogen observaciones.\n\nActividad 3\nAnalizamos nuestras evidencias: Organizan resultados, interpretan hallazgos y preparan un soporte breve de conclusiones.\n\nDesarrollo sugerido\nMomento 1: Recuperación del reto y de los criterios de validación.\nMomento 2: Demostración del prototipo y registro de observaciones.\nMomento 3: Análisis de evidencias y elaboración de conclusiones para la siguiente fase.",
-          pages: "(Actividad 1-3: p. 4-6)",
+          pages: "(Actividad 1-3: p. 5-7)",
           documents: ["Programación - Sesión 10.pdf"],
         },
         {
@@ -283,7 +283,7 @@ window.INTEP_FLEX_TOOLKIT = {
           guideName: "Guía 11\nPresentación final y socialización de proyectos",
           activity:
             "Paso 1\nNarrativa del proyecto: Organizan el recorrido del problema, el proceso, la solución y los aprendizajes.\n\nPaso 2\nEnsayo del mensaje: Revisan claridad, secuencia y fuerza comunicativa de la presentación.\n\nDesarrollo sugerido\nMomento 1: Construcción del guion general.\nMomento 2: Diseño o ajuste de apoyos visuales.\nMomento 3: Revisión final del mensaje antes del ensayo institucional.",
-          pages: "(Paso 1-2: p. 4-5)",
+          pages: "(Actividad 1: p. 2-4)",
           documents: ["ABP - Guía 11.pdf"],
         },
         {
@@ -302,7 +302,7 @@ window.INTEP_FLEX_TOOLKIT = {
           guideName: "Socializamos nuestros proyectos con la comunidad educativa",
           activity:
             "Actividad 1\nEvento de socialización: Presentan el proyecto ante la comunidad educativa y registran preguntas o comentarios del público.\n\nDesarrollo sugerido\nMomento 1: Montaje y ensayo final de la presentación.\nMomento 2: Socialización institucional del proyecto.\nMomento 3: Balance posterior y acuerdos de ajuste para la circulación final.",
-          pages: "(Actividad 1: p. 2-4)",
+          pages: "(Paso 1-2: p. 4)",
           documents: ["EAFIT Semilleros - Socializamos con la comunidad.pdf"],
         },
         {
