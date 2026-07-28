@@ -11,7 +11,7 @@ const PHASE_DOCUMENT_LINKS = {
     "https://drive.google.com/file/d/1MjdstGhisbzzst9aq588fLUrEfHYJ8By/view?usp=drivesdk",
   "EAFIT Semilleros - Formular preguntas de investigación.pdf":
     "https://drive.google.com/file/d/1x--xlq2G539KUY65-Y_jIDIxRjO4zGA5/view?usp=drivesdk",
-  "TALLER METODOLÓGICO - Storytelling  para estudiantes por el dinamizador.docx":
+  "TALLER METODOLÓGICO - Storytelling para estudiantes por el dinamizador.docx":
     "https://drive.google.com/file/d/1aYIP7qxhdeecV4SHR7aInWxyhIgdeDV0/view?usp=sharing",
   "DT - Ideación divergente.pdf":
     "https://drive.google.com/file/d/1CSfxGodTAyUSiQUUaSxFrZJ3BCdClLzN/view?usp=drivesdk",
@@ -57,7 +57,7 @@ const PHASE_DOCUMENT_LINKS = {
     "https://drive.google.com/file/d/1T__EkFzOniX2ptx4uX4qk1Pdxab1uSaV/view?usp=drivesdk",
   "Programación - Sesión 11.pdf":
     "https://drive.google.com/file/d/1dXnWPhYLK6zjNuL_VFZUYDX19q17-_4w/view?usp=drivesdk",
-  "TALLER METODOLÓGICO Narrativas para estudiantes por el dinamizador.docx":
+  "TALLER METODOLÓGICO - Narrativas para estudiantes por el dinamizador.docx":
     "https://drive.google.com/file/d/1od58Svn6yHM6S23JSnNUYHZHylfFoPWI/view?usp=sharing",
   "EAFIT Programación - Presentación final y celebración.pdf":
     "https://drive.google.com/file/d/1SFJuJUpadEABm2_r7WGMfZwoJyrVIT3b/view?usp=drivesdk",
@@ -265,13 +265,17 @@ function renderAdditionalMaterials(host, materials) {
     .join("");
 }
 
-function makeDocumentsMarkup(documents) {
-  const noticesMarkup = `
+function makeDocumentNoticesMarkup() {
+  return `
     <ul class="document-notice-list">
       <li><span class="document-notice-icon" aria-hidden="true">⚠️</span> Es necesario tener sesión de Google iniciada con correo <code>@intep.edu.co</code> para acceder al material.</li>
       <li><span class="document-notice-icon" aria-hidden="true">⚠️</span> Todo el material compartido es propiedad del <strong>MEN/INTEP</strong>. Prohibido divulgar.</li>
     </ul>
   `;
+}
+
+function makeDocumentsMarkup(documents, showNotices = true) {
+  const noticesMarkup = showNotices ? makeDocumentNoticesMarkup() : "";
 
   if (!documents.length) {
     return `
@@ -291,7 +295,7 @@ function makeDocumentsMarkup(documents) {
           if (!href) {
             return `
               <li>
-                <span class="document-link is-muted">
+                <span class="document-link document-link-small is-muted">
                   <span class="document-tag">${tag}</span>
                   ${escapeHtml(label)}
                 </span>
@@ -302,7 +306,7 @@ function makeDocumentsMarkup(documents) {
           return `
             <li>
               <a
-                class="document-link"
+                class="document-link document-link-small"
                 href="${escapeHtml(href)}"
                 target="_blank"
                 rel="noreferrer noopener"
@@ -316,6 +320,99 @@ function makeDocumentsMarkup(documents) {
         .join("")}
     </ul>
     ${noticesMarkup}
+  `;
+}
+
+function makeComplementaryDocumentsMarkup(documents) {
+  if (!documents.length) {
+    return "";
+  }
+
+  return `
+    <ul class="document-list complementary-document-list">
+      ${documents
+        .map((document) => {
+          const label = normalizeText(
+            typeof document === "string" ? document : document.label
+          );
+          const href = normalizeText(
+            typeof document === "string"
+              ? PHASE_DOCUMENT_LINKS[label]
+              : document.href
+          );
+          const tag = label.toLowerCase().endsWith(".docx") ? "DOCX" : "PDF";
+
+          return `
+            <li>
+              ${
+                href
+                  ? `
+                    <a
+                      class="document-link document-link-small"
+                      href="${escapeHtml(href)}"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      <span class="document-tag">${tag}</span>
+                      ${escapeHtml(label)}
+                    </a>
+                  `
+                  : `
+                    <span class="document-link document-link-small is-muted">
+                      <span class="document-tag">${tag}</span>
+                      ${escapeHtml(label)}
+                    </span>
+                  `
+              }
+            </li>
+          `;
+        })
+        .join("")}
+    </ul>
+  `;
+}
+
+function makeComplementaryMaterialMarkup(material) {
+  if (!material) {
+    return "";
+  }
+
+  const activity = normalizeText(material.activity);
+  const documents = Array.isArray(material.documents) ? material.documents : [];
+  const documentsMarkup = makeComplementaryDocumentsMarkup(documents);
+  const activityLines = activity
+    .split("\n")
+    .map((line) => line.trim())
+    .filter(Boolean);
+  const activityHeading = activityLines.shift() || "Actividad complementaria";
+  const pages =
+    activityLines.length && /^\(.+\)$/u.test(activityLines.at(-1))
+      ? activityLines.pop()
+      : "";
+  const activityBody = activityLines.join("\n");
+
+  return `
+    <section class="detail-block detail-complementary">
+      <div class="recommendation-subsection">
+        <h4>${escapeHtml(activityHeading)}</h4>
+        ${activityBody ? `<div class="rich-copy">${formatMultiline(activityBody)}</div>` : ""}
+      </div>
+      ${
+        pages
+          ? `
+            <div class="recommendation-subsection">
+              <h4>Páginas</h4>
+              <p>${escapeHtml(pages)}</p>
+            </div>
+          `
+          : ""
+      }
+      <div class="recommendation-subsection">
+        <h4>Material complementario</h4>
+        ${documentsMarkup}
+        ${makeDocumentNoticesMarkup()}
+      </div>
+    </section>
   `;
 }
 
@@ -363,6 +460,47 @@ function makeResourceLinksMarkup(links) {
         })
         .join("")}
     </ul>
+  `;
+}
+
+function makeRecommendationDetailsMarkup(
+  session,
+  activity,
+  pages,
+  complementaryMaterial
+) {
+  const documentsMarkup = makeDocumentsMarkup(
+    session.documents || [],
+    !complementaryMaterial
+  );
+
+  return `
+    <section class="detail-block detail-recommendation-group">
+    ${
+      activity
+        ? `
+          <div class="recommendation-subsection">
+            <h4>Actividad recomendada</h4>
+            <div class="rich-copy">${formatMultiline(activity)}</div>
+          </div>
+        `
+        : ""
+    }
+    ${
+      pages
+        ? `
+          <div class="recommendation-subsection">
+            <h4>Páginas</h4>
+            <p>${escapeHtml(pages)}</p>
+          </div>
+        `
+        : ""
+    }
+      <div class="recommendation-subsection">
+        <h4>Documento referenciado</h4>
+        ${documentsMarkup}
+      </div>
+    </section>
   `;
 }
 
@@ -428,6 +566,9 @@ function makeSessionMarkup(session, isOpen) {
   const activity = normalizeText(session.activity);
   const pages = normalizeText(session.pages);
   const skills = Array.isArray(session.skills) ? session.skills : [];
+  const complementaryMaterial =
+    session.complementaryMaterial ||
+    window.INTEP_COMPLEMENTARY_MATERIALS?.[session.title];
 
   return `
     <details class="session-card"${isOpen ? " open" : ""}>
@@ -458,30 +599,13 @@ function makeSessionMarkup(session, isOpen) {
             `
             : ""
         }
-        ${
-          activity
-            ? `
-              <section class="detail-block detail-activity">
-                <h4>Actividad recomendada</h4>
-                <div class="rich-copy">${formatMultiline(activity)}</div>
-              </section>
-            `
-            : ""
-        }
-        ${
-          pages
-            ? `
-              <section class="detail-block detail-pages">
-                <h4>Páginas</h4>
-                <p>${escapeHtml(pages)}</p>
-              </section>
-            `
-            : ""
-        }
-        <section class="detail-block detail-documents">
-          <h4>Documento referenciado</h4>
-          ${makeDocumentsMarkup(session.documents || [])}
-        </section>
+        ${makeRecommendationDetailsMarkup(
+          session,
+          activity,
+          pages,
+          complementaryMaterial
+        )}
+        ${makeComplementaryMaterialMarkup(complementaryMaterial)}
       </div>
     </details>
   `;

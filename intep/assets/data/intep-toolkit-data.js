@@ -19,7 +19,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Creatividad",
           "Colaboración",
         ],
-        repository: "Guías de Desing thinking- EAFIT 2024",
+        repository: "Guías de Design Thinking - EAFIT 2024",
         guideName: "Reconocimiento del territorio",
         activity:
           "Actividad 1\nRompehielos: Desarrollan la dinámica para activar al grupo, reconocer intereses iniciales y abrir la conversación sobre el territorio.",
@@ -40,15 +40,15 @@ window.INTEP_TOOLKIT_DATA = [
           "Alfabetización de datos y cultura digital",
           "Ciudadanía y ética",
         ],
-        repository: "Guías de ABP- INTEP 2025",
+        repository: "Guías de ABP - INTEP 2025",
         guideName: "Guía 2\nProfundizando en la fase\nAPRENDO del ABP",
         activity:
-          "Paso 1-4\nIndagación inicial: Formulan hipótesis preliminares, revisan evidencias, organizan una ruta de trabajo y registran acuerdos en la bitácora.",
+          "Pasos 1-4\nIndagación inicial: Formulan hipótesis preliminares, revisan evidencias, organizan una ruta de trabajo y registran acuerdos en la bitácora.",
         pages: "(p. 3-5)",
         documents: ["ABP - Guía 2.pdf"],
       },
       {
-        title: "Sesión 3: Taller 1: introducción a la comunicación científica",
+        title: "Sesión 3: Taller 1: Introducción a la comunicación científica",
         methodology: "ABP",
         objective:
           "Comprender la importancia de registrar y comunicar hallazgos durante el desarrollo de un proceso de investigación escolar.",
@@ -86,7 +86,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Comunicación",
           "Ciudadanía y ética",
         ],
-        repository: "Guías de ABP- INTEP 2025",
+        repository: "Guías de ABP - INTEP 2025",
         guideName: "Guía 5\nFormulación y ajuste de hipótesis con enfoque SMART",
         activity:
           "Paso 1\nFormulación inicial de hipótesis: Conversan sobre el problema identificado y ordenan hipótesis colectivas para reconocer posibles causas o explicaciones.\n\nPaso 2\nValidación SMART: Ajustan la hipótesis principal con la plantilla de apoyo, revisando claridad, medición y viabilidad.",
@@ -103,7 +103,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Creatividad",
           "Colaboración",
         ],
-        repository: "Guías de Desing thinking- EAFIT 2024",
+        repository: "Guías de Design Thinking - EAFIT 2024",
         guideName: "Empatía y actores",
         activity:
           "Actividad 1\nAnálisis de imagen: Observan imágenes del contexto para reconocer percepciones, actores y situaciones asociadas al problema.\n\nActividad 2\nPreguntas en contexto: Transforman las ideas iniciales en preguntas de investigación vinculadas con necesidades del territorio.",
@@ -121,10 +121,10 @@ window.INTEP_TOOLKIT_DATA = [
           "Colaboración",
           "Comunicación",
         ],
-        repository: "Guías EAFIT- 2025",
+        repository: "Guías EAFIT - 2025",
         guideName: "Formular preguntas de investigación",
         activity:
-          "Actividad 2\nMini-concepto: Reconocen criterios para construir buenas preguntas de investigación.\n\nActividad 3\nDel tema a la pregunta: Redactan y afinan preguntas orientadoras en equipo.\n\nActividad 4\nSemáforo de preguntas: Valoran la calidad de las preguntas y hacen ajustes finales.",
+          "Actividad 2\nMiniconcepto: Reconocen criterios para construir buenas preguntas de investigación.\n\nActividad 3\nDel tema a la pregunta: Redactan y afinan preguntas orientadoras en equipo.\n\nActividad 4\nSemáforo de preguntas: Valoran la calidad de las preguntas y hacen ajustes finales.",
         pages:
           "(Actividad 2: p. 5-7; Actividad 3: p. 8-16; Actividad 4: p. 17-19)",
         documents: ["EAFIT Semilleros - Formular preguntas de investigación.pdf"],
@@ -140,7 +140,7 @@ window.INTEP_TOOLKIT_DATA = [
         activity: "",
         pages: "",
         documents: [
-          "TALLER METODOLÓGICO - Storytelling  para estudiantes por el dinamizador.docx",
+          "TALLER METODOLÓGICO - Storytelling para estudiantes por el dinamizador.docx",
         ],
       },
     ],
@@ -161,7 +161,7 @@ window.INTEP_TOOLKIT_DATA = [
         objective:
           "Generar múltiples ideas de solución frente al reto planteado.",
         skills: ["Creatividad", "Innovación", "Colaboración", "Comunicación"],
-        repository: "Guías de Desing thinking- EAFIT 2024",
+        repository: "Guías de Design Thinking - EAFIT 2024",
         guideName: "Ideación divergente",
         activity:
           "Actividad 1\nUn alto en el camino: Realizan una actividad práctica STEM+ para abrir la ideación y conectar la solución con intereses del grupo.",
@@ -182,7 +182,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Ciudadanía y ética",
         ],
         repository:
-          "Guías de Desing thinking- EAFIT 2024\nGuías de ABP- INTEP 2025",
+          "Guías de Design Thinking - EAFIT 2024\nGuías de ABP - INTEP 2025",
         guideName:
           "Priorización de ideas\nGuía 4\nDesarrollo creativo y aplicación inicial del método científico en el ABP",
         activity:
@@ -202,7 +202,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Alfabetización de datos y cultura digital",
           "Ciudadanía y ética",
         ],
-        repository: "Guías de ABP- INTEP 2025",
+        repository: "Guías de ABP - INTEP 2025",
         guideName: "Guía 6\nDiseño del plan metodológico de investigación",
         activity:
           "Paso 4\nPlan metodológico: Organizan acciones, recursos, roles y tiempos para desarrollar la investigación.\n\nPaso 5\nValidación SMART: Revisan la consistencia del plan y ajustan criterios de viabilidad.",
@@ -234,7 +234,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Comunicación",
           "Alfabetización de datos y cultura digital",
         ],
-        repository: "Guías EAFIT- 2025",
+        repository: "Guías EAFIT - 2025",
         guideName: "Plan de recolección de datos",
         activity:
           "Actividad 1\nDetectives de datos: Reconocen qué datos necesitan para responder la pregunta de investigación.\n\nActividad 2\nTécnicas de recolección: Revisan técnicas posibles y eligen las más pertinentes.\n\nActividad 4\nDiseñamos nuestro plan: Elaboran un plan básico y viable de recolección de datos.",
@@ -254,7 +254,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Comunicación",
           "Alfabetización de datos y cultura digital",
         ],
-        repository: "Guías EAFIT- 2025\nGuías de programación- INTEP 2025",
+        repository: "Guías EAFIT - 2025\nGuías de programación - INTEP 2025",
         guideName: "Primer experimento\nProgramación - Sesión 6",
         activity:
           "Guía 1 - Actividad 1\nConstrucción del experimento: Definen el experimento y construyen o simulan una primera prueba de la solución.\n\nGuía 2 - Actividad 2\nAlgoritmos de mi prototipo: Representan el funcionamiento del prototipo en pasos claros y secuenciales.",
@@ -275,11 +275,11 @@ window.INTEP_TOOLKIT_DATA = [
           "Alfabetización de datos y cultura digital",
           "Ciudadanía y ética",
         ],
-        repository: "Guías EAFIT- 2025\nGuías de programación- INTEP 2025",
+        repository: "Guías EAFIT - 2025\nGuías de programación - INTEP 2025",
         guideName:
           "Sistematización y análisis de datos\nProgramación - Sesión 10",
         activity:
-          "Guía 1 - Actividad 2\nMural de patrones: Organizan datos, construyen categorías y formulan hallazgos clave.\n\nGuía 2 - Actividad 2 y 3\nImpacto y evidencias: Prueban el prototipo, registran observaciones y analizan resultados.",
+          "Guía 1 - Actividad 2\nMural de patrones: Organizan datos, construyen categorías y formulan hallazgos clave.\n\nGuía 2 - Actividades 2 y 3\nImpacto y evidencias: Prueban el prototipo, registran observaciones y analizan resultados.",
         pages: "(Guía 1: p. 5-7; Guía 2: p. 6-7)",
         documents: [
           "EAFIT Semilleros - Sistematización y análisis de datos.pdf",
@@ -297,7 +297,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Alfabetización de datos y cultura digital",
           "Ciudadanía y ética",
         ],
-        repository: "Guías de ABP- INTEP 2025",
+        repository: "Guías de ABP - INTEP 2025",
         guideName:
           "Guía 10\nAnálisis de resultados y construcción de conclusiones",
         activity:
@@ -322,7 +322,7 @@ window.INTEP_TOOLKIT_DATA = [
         methodology: "Design Thinking",
         objective: "Construir un primer modelo de la solución propuesta.",
         skills: ["Creatividad", "Innovación", "Colaboración", "Comunicación"],
-        repository: "Guías de Desing thinking- EAFIT 2024",
+        repository: "Guías de Design Thinking - EAFIT 2024",
         guideName: "Prototipo inicial",
         activity:
           "Actividad 1\nExpo-inspiradora: Revisan referentes para reconocer posibilidades de producción.\n\nActividad 2\nVamos a crear - Sprint 1: Inician la construcción organizada del prototipo con tareas, roles y seguimiento.",
@@ -340,7 +340,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Colaboración",
           "Comunicación",
         ],
-        repository: "Guías de Desing thinking- EAFIT 2024",
+        repository: "Guías de Design Thinking - EAFIT 2024",
         guideName: "Prueba del prototipo",
         activity:
           "Actividad 1\nTécnicas de prototipado: Seleccionan el tipo de prototipo más adecuado según la problemática.\n\nActividad 2\nBrainstorming con objetos: Construyen alternativas con materiales disponibles, las prueban de forma exploratoria y registran aprendizajes.",
@@ -374,7 +374,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Comunicación",
           "Alfabetización de datos y cultura digital",
         ],
-        repository: "Guías de programación- INTEP 2025",
+        repository: "Guías de programación - INTEP 2025",
         guideName: "Programación - Sesión 5",
         activity:
           "Actividad 1\nReflexionemos sobre nuestros prototipos: Analizan fortalezas y aspectos por mejorar.\n\nActividad 2\nValoramos nuestro prototipo: Evalúan la primera versión con criterios claros.\n\nActividad 4\nConstruyamos la segunda versión: Incorporan mejoras y documentan el proceso.",
@@ -394,7 +394,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Comunicación",
           "Alfabetización de datos y cultura digital",
         ],
-        repository: "Guías de programación- INTEP 2025",
+        repository: "Guías de programación - INTEP 2025",
         guideName: "Programación - Sesión 9",
         activity:
           "Actividad 1\nAnalizamos los hallazgos: Revisan resultados de la prueba e identifican mejoras prioritarias.\n\nActividad 2\nIdeamos mejoras posibles: Seleccionan ajustes viables para fortalecer el prototipo.\n\nActividad 3\nConstruimos la nueva versión: Implementan cambios y documentan la iteración.",
@@ -411,7 +411,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Colaboración",
           "Comunicación",
         ],
-        repository: "Guías de Desing thinking- EAFIT 2024",
+        repository: "Guías de Design Thinking - EAFIT 2024",
         guideName: "Validación con usuarios",
         activity:
           "Actividad 1\nValoremos nuestro aprendizaje: Revisan avances del proceso y reconocen cambios logrados.\n\nActividad 2\nÁrbol de los logros: Documentan logros, desafíos y propuestas de mejora para valorar la pertinencia del prototipo.",
@@ -428,7 +428,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Comunicación",
           "Alfabetización de datos y cultura digital",
         ],
-        repository: "Guías EAFIT- 2025",
+        repository: "Guías EAFIT - 2025",
         guideName: "Organizamos la información",
         activity:
           "Actividad 2\nConstrucción del póster digital del proyecto: Organizan problema, proceso, solución y evidencias en una pieza visual para socializar.",
@@ -445,7 +445,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Colaboración",
           "Comunicación",
         ],
-        repository: "Guías EAFIT- 2025",
+        repository: "Guías EAFIT - 2025",
         guideName: "Listos para presentar nuestra solución",
         activity:
           "Actividad 1\nÚltimos ajustes a nuestro experimento o solución: Revisan, fortalecen y ensayan el funcionamiento y la comunicación de la solución.",
@@ -458,7 +458,7 @@ window.INTEP_TOOLKIT_DATA = [
         objective:
           "Simular la presentación del proyecto antes de su socialización final.",
         skills: ["Creatividad", "Colaboración", "Comunicación"],
-        repository: "Guías EAFIT- 2025",
+        repository: "Guías EAFIT - 2025",
         guideName: "Preparamos presentaciones",
         activity:
           "Actividad 2\nPreparación de presentaciones orales: Organizan el discurso, los recursos y los roles del equipo.\n\nActividad 3\nEnsayo de presentaciones: Practican la exposición, reciben retroalimentación y ajustan detalles finales.",
@@ -491,7 +491,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Alfabetización de datos y cultura digital",
           "Ciudadanía y ética",
         ],
-        repository: "Guías de ABP- INTEP 2025",
+        repository: "Guías de ABP - INTEP 2025",
         guideName:
           "Guía 11\nPresentación final y socialización de proyectos",
         activity:
@@ -511,7 +511,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Alfabetización de datos y cultura digital",
           "Ciudadanía y ética",
         ],
-        repository: "Guías de programación- INTEP 2025",
+        repository: "Guías de programación - INTEP 2025",
         guideName: "Programación - Sesión 11",
         activity:
           "Actividad 1\nEstructuramos nuestra historia: Ordenan el relato del proyecto en inicio, desarrollo y desenlace.\n\nActividad 2\nDiseñamos los recursos visuales: Elaboran materiales de apoyo claros y atractivos.\n\nActividad 3\nEnsayamos la presentación: Practican la exposición y reciben retroalimentación.",
@@ -529,7 +529,7 @@ window.INTEP_TOOLKIT_DATA = [
         activity: "",
         pages: "",
         documents: [
-          "TALLER METODOLÓGICO Narrativas para estudiantes por el dinamizador.docx",
+          "TALLER METODOLÓGICO - Narrativas para estudiantes por el dinamizador.docx",
         ],
       },
       {
@@ -542,7 +542,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Colaboración",
           "Comunicación",
         ],
-        repository: "Guías EAFIT- 2025",
+        repository: "Guías EAFIT - 2025",
         guideName: "Presentación final y celebración",
         activity:
           "Actividad 1\nMontaje y verificación técnica: Preparan el espacio y revisan materiales, prototipos y recursos.\n\nActividad 2\nPresentaciones de los equipos: Realizan el pitch del proyecto frente al público.",
@@ -560,7 +560,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Alfabetización de datos y cultura digital",
           "Ciudadanía y ética",
         ],
-        repository: "Guías de programación- INTEP 2025\nGuías EAFIT- 2025",
+        repository: "Guías de programación - INTEP 2025\nGuías EAFIT - 2025",
         guideName: "Programación - Sesión 12\nSocializamos con la comunidad",
         activity:
           "Guía 2 - Actividad 1\nEvento de socialización: Presentan el proyecto a la comunidad educativa y abren diálogo con el público.\n\nGuía 1 - Actividad 2\nRetroalimentación cruzada: Recogen comentarios de pares e invitados para valorar aprendizajes.",
@@ -583,7 +583,7 @@ window.INTEP_TOOLKIT_DATA = [
           "Alfabetización de datos y cultura digital",
           "Ciudadanía y ética",
         ],
-        repository: "Guías de ABP- INTEP 2025",
+        repository: "Guías de ABP - INTEP 2025",
         guideName:
           "Guía 12\nPresentación final y socialización de proyectos (Cierre lúdico)",
         activity:

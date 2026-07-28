@@ -650,6 +650,26 @@ a {
   border: 1px solid rgba(47, 42, 36, 0.08);
 }
 
+.detail-recommendation-group {
+  background: rgba(151, 44, 168, 0.1);
+  border: 1px solid rgba(47, 42, 36, 0.08);
+}
+
+.recommendation-subsection + .recommendation-subsection {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid rgba(47, 42, 36, 0.1);
+}
+
+.detail-complementary {
+  background: rgba(200, 255, 24, 0.16);
+  border: 1px solid rgba(47, 42, 36, 0.08);
+}
+
+.complementary-document-list {
+  margin-top: 0.75rem;
+}
+
 .session-content h4 {
   margin: 0 0 0.3rem;
   font-size: 0.82rem;
